@@ -8,13 +8,19 @@
 </head>
 <body>
 <header>
-  <%= link_to "<h1>Demo App</h1>", root_path %>
+  <h1><%= link_to "Demo App", root_path %></h1>
   <nav>
     <ul>
       <li><%= link_to "About", about_path %></li>
-      <li><%= link_to "Contact", contact_path %></li>
+      <% if signed_in? %>
+      <li><%= link_to "Profile", current_user %></li>
+      <% end %>
       <li><%= link_to "Help", help_path %></li>
-      <li><%= link_to "Sign in", "#" %></li>
+      <% if signed_in? %>
+        <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+      <% else %>
+        <li><%= link_to "Sign in", signin_path %></li>
+      <% end %>
     </ul>
   </nav>
 </header>
