@@ -7,8 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+  <%= link_to "<h1>Demo App</h1>", root_path %>
+  <nav>
+    <ul>
+      <li><%= link_to "About", about_path %></li>
+      <li><%= link_to "Contact", contact_path %></li>
+      <li><%= link_to "Help", help_path %></li>
+      <li><%= link_to "Sign in", "#" %></li>
+    </ul>
+  </nav>
+</header>
 
+<section>
 <%= yield %>
+</section>
+
+<footer>
+  Hoon Cho testing New App 2 in 2012
+</footer>
 
 </body>
 </html>
