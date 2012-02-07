@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<div>
 <p>
-  <b>Name:</b>
+  <%= gravatar_for @user %>
   <%= @user.name %>
 </p>
 
@@ -9,6 +10,8 @@
   <b>Email:</b>
   <%= @user.email %>
 </p>
+
+</div>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
